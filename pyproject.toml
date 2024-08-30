@@ -1,11 +1,13 @@
 [project]
 name = "fishmlserv"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Serving Machine Learning Model - Using KNN"
 authors = [
     {name = "Mingk42", email = "xoals123456t@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "fastapi[standard]>=0.112.2",
+]
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
