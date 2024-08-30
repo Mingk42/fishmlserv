@@ -9,3 +9,9 @@
 $ uvicorn src.fishmlserv.main:app --reload  # dev
 $ uvicorn src.fishmlserv.main:app --host 0.0.0.0 --port 1234    # customize host, port
 ```
+
+### Docker
+```bash
+$ sudo docker build -t <tag name>
+$ sudo docker run -d --name <container name> -p 80:1234 <image name> 
+```
