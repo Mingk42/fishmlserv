@@ -21,7 +21,7 @@ def post_root():
     return {"method":"post"}
 
 @app.get("/fish")
-def fish(length:int, weight:int):
+def fish(length:float, weight:float):
     """
     어종 판별기
 
