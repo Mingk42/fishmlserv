@@ -32,7 +32,8 @@ def fish(length:float, weight:float):
     Return
      - dict, 물고기의 종류를 담은 딕셔너리
     """
-
+    
+    from fishmlserv.model.manager import get_model_path 
 #    if length>=30:
 #        prediction="도미"
 #    else:
@@ -51,7 +52,7 @@ def fish(length:float, weight:float):
 
     return {
             #"prediction":CLASSES[pred],
-            "prediction":"IDK",
+            "prediction":get_model_path(),
             "length":length,
             "weight":weight
             }
