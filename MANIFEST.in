@@ -1,1 +1,2 @@
-include src/fishmlserv/model/model.pkl
+# include src/fishmlserv/model/model.pkl
+recursive-include src *.pkl
