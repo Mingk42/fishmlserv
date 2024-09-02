@@ -1,12 +1,14 @@
 [project]
 name = "fishmlserv"
-version = "0.1.0"
+version = "0.7.9"
 description = "Serving Machine Learning Model - Using KNN"
 authors = [
     {name = "Mingk42", email = "xoals123456t@gmail.com"},
 ]
 dependencies = [
-    "fastapi[standard]>=0.112.2",
+    "fastapi>=0.112.2",
+    "uvicorn[standard]>=0.30.6",
+    "scikit-learn>=1.5.1",
 ]
 requires-python = ">=3.9"
 readme = "README.md"
@@ -15,3 +17,10 @@ license = {text = "MIT"}
 
 [tool.pdm]
 distribution = false
+
+[tool.pdm.dev-dependencies]
+note = [
+    "notebook>=7.2.2",
+    "matplotlib>=3.9.2",
+    "pandas>=2.2.2",
+]
