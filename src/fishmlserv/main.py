@@ -47,8 +47,8 @@ def fish(length:float, weight:float):
 
     CLASSES={
                 0:"빙어",
-               1:"농어"
-           }
+                1:"농어"
+            }
 
     return {
             "prediction":CLASSES[pred],
