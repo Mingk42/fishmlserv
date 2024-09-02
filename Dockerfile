@@ -15,7 +15,7 @@ COPY  src/fishmlserv/main.py /code/
 # 여러번 실행 가능
 RUN pip install --upgrade pip
 #RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-RUN pip install git+https://github.com/Mingk42/fishmlserv.git@v0.6.0/ml
+RUN pip install git+https://github.com/Mingk42/fishmlserv.git@v0.7.0/MANIFEST
 
 # 한 번 만 실행가능, 서버 실행
 #CMD ["uvicorn", "src.fishmlserv.main:app", "--host", "0.0.0.0", "--port", "8080"]
