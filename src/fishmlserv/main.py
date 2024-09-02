@@ -39,18 +39,19 @@ def fish(length:float, weight:float):
 #        prediction="빙어"
 
 
-    with open("./model/model.pkl", "rb") as f:
-        fish_model=pickle.load(f)
+#    with open("./model/model.pkl", "rb") as f:
+#        fish_model=pickle.load(f)
         
-    pred=fish_model.predict([[length, weight]])[0]
+#    pred=fish_model.predict([[length, weight]])[0]
 
-    CLASSES={
-                0:"빙어",
-                1:"농어"
-            }
+#    CLASSES={
+#                0:"빙어",
+#               1:"농어"
+#           }
 
     return {
-            "prediction":CLASSES[pred],
+            #"prediction":CLASSES[pred],
+            "prediction":"IDK",
             "length":length,
             "weight":weight
             }
