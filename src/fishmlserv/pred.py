@@ -14,7 +14,12 @@ def prediction(l:float=typer.Option(...,"-l"), w:float=typer.Option(...,"-w")):
 
     pred=model.predict([[l,w]])
     
-    print(pred)
+    CLASSES={
+        0:"빙어",
+        1:"도미"
+    }
+
+    print(CLASSES[pred[0]])
 
 
 def run():
