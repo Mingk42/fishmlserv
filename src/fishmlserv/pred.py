@@ -3,7 +3,17 @@ import typer
 app = typer.Typer()
 
 
-def prediction(l:float=typer.Option(...,"-l"), w:float=typer.Option(...,"-w")):
+def prediction(l:float=typer.Option(...,"-l","--length"), w:float=typer.Option(...,"-w","--weight")):
+    """
+    어종 판별기
+
+    Args:
+     - length(int): 물고기 길이(cm)
+     - weight(int): 물고기 무게(g)
+
+    Returns:
+     - str, 물고기의 종류를 반환 (도미/빙어)
+    """
 
     from fishmlserv.model.manager import get_model_path
     from sklearn.neighbors import KNeighborsClassifier
