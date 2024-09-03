@@ -26,12 +26,12 @@ def run():
     typer.run(prediction)
 
 
-def run_pred(length:float=typer.Option(...,"-l","--length"),weight:float=typer.Option(...,"-w","--weight")):
+def run_pred():
 
-    typer.run(fish(length,weight))
+    typer.run(fish)
 
 
-def fish(length:float, weight:float):
+def fish(length:float=typer.Option(...,"-l","--length"),weight:float=typer.Option(...,"-w","--weight")):
     """
     어종 판별기
 
@@ -45,7 +45,7 @@ def fish(length:float, weight:float):
     from fishmlserv.model.manager import get_model_path
     from sklearn.neighbors import KNeighborsClassifier
     import pickle
-    
+
 #    if length>=30:
 #        prediction="도미"
 #    else:
