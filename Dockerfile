@@ -1,7 +1,7 @@
 # Base Image 
 # FROM python:3.9
 # FROM python:3.11.9-alpine3.20
-FROM datamario24/python311scikitlearn-fastapi
+FROM datamario24/python311scikitlearn-fastapi:1.0.0
 
 # 
 WORKDIR /app

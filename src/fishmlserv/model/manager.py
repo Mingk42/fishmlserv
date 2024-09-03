@@ -6,4 +6,4 @@ def get_model_path():
     return os.path.join(abspath, "model.pkl")
 
 
-print(get_model_path())
+# print(get_model_path())
