@@ -1,6 +1,6 @@
 [project]
 name = "fishmlserv"
-version = "0.8.0"
+version = "0.8.1"
 description = "Serving Machine Learning Model - Using KNN"
 authors = [
     {name = "Mingk42", email = "xoals123456t@gmail.com"},
@@ -16,6 +16,7 @@ license = {text = "MIT"}
 [project.scripts]
 get-model-path="fishmlserv.model.manager:get_model_path"
 prediction="fishmlserv.pred:run"
+pred="fishmlserv.pred:run_pred"
 
 [tool.pdm]
 distribution = false
