@@ -7,6 +7,7 @@ authors = [
 ]
 dependencies = [
     "typer>=0.12.5",
+    "argparse>=1.4.0",
 ]
 requires-python = ">=3.9"
 readme = "README.md"
@@ -14,7 +15,7 @@ license = {text = "MIT"}
 
 [project.scripts]
 get-model-path="fishmlserv.model.manager:get_model_path"
-prediction="fishmlserv.tp:prediction"
+prediction="fishmlserv.pred:run"
 
 [tool.pdm]
 distribution = false
