@@ -23,7 +23,7 @@ def prediction(l:float=typer.Option(), w:float=typer.Option()):
     with open(get_model_path(),"rb") as f:
         model=pickle.load(f)
 
-    pred=model.predict(l,w)
+    pred=model.predict([l,w])
 
     print(pred)
 
