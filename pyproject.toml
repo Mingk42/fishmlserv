@@ -5,13 +5,16 @@ description = "Serving Machine Learning Model - Using KNN"
 authors = [
     {name = "Mingk42", email = "xoals123456t@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "typer>=0.12.5",
+]
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
 
 [project.scripts]
 get-model-path="fishmlserv.model.manager:get_model_path"
+prediction="fishmlserv.tp:prediction"
 
 [tool.pdm]
 distribution = false
