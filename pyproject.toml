@@ -1,15 +1,11 @@
 [project]
 name = "fishmlserv"
-version = "0.7.9"
+version = "0.8.0"
 description = "Serving Machine Learning Model - Using KNN"
 authors = [
     {name = "Mingk42", email = "xoals123456t@gmail.com"},
 ]
-dependencies = [
-    "fastapi>=0.112.2",
-    "uvicorn[standard]>=0.30.6",
-    "scikit-learn>=1.5.1",
-]
+dependencies = []
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
