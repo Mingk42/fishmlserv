@@ -16,7 +16,7 @@ def goodbye(name: str, formal: bool = False):
         print(f"Bye {name}!")
 
 @app.command()
-def prediction(l:float, w:float):
+def prediction(l:float=typer.Option(), w:float=typer.Option()):
     from fishmlserv.model.manager import get_model_path
     import pickle
 
