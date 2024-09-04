@@ -77,6 +77,7 @@ def fish(length:float, weight:float, nneighbor:int):
     """
 
     import os
+    import numpy as np
     from fishmlserv.model.manager import get_model_path
 
     if nneighbor not in [1,5,15,25,49]:
