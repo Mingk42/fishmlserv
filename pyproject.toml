@@ -5,10 +5,7 @@ description = "Serving Machine Learning Model - Using KNN"
 authors = [
     {name = "Mingk42", email = "xoals123456t@gmail.com"},
 ]
-dependencies = [
-    "typer>=0.12.5",
-    "argparse>=1.4.0",
-]
+dependencies = []
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
