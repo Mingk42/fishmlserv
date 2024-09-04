@@ -61,3 +61,35 @@ def fish(length:float, weight:float):
             "weight":weight
             }
 
+
+@app.get("/fish_std")
+def fish(length:float, weight:float, nneighbor:int):
+    """
+    어종 판별기(표준화 모델)
+
+    Args:
+     - length(int): 물고기 길이(cm)
+     - weight(int): 물고기 무게(g)
+
+    Return
+     - dict, 물고기의 종류를 담은 딕셔너리
+    """
+
+    import os
+    from fishmlserv.model.manager import get_model_path
+
+    with open(f"{os.path.abspath(get_model_path())}/std-model-{nneighbor}.pickle", "rb") as f:
+        fish_model=pickle.load(f)
+
+    pred=fish_model.predict([[length, weight]])[0]
+
+    CLASSES={
+                0:"빙어",
+                1:"도미"
+            }
+
+    return {
+            "prediction":CLASSES[pred],
+            "length":length,
+            "weight":weight
+            }
