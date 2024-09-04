@@ -82,7 +82,7 @@ def fish(length:float, weight:float, nneighbor:int):
     if nneighbor not in [1,5,15,25,49]:
         return "wrong parameter"
 
-    with open(f"{os.path.dirname(get_model_path())}/std-model-{nneighbor}.pickle", "rb") as f:
+    with open(f"{os.path.dirname(get_model_path())}/std-model-{nneighbor}.pkl", "rb") as f:
         fish_model=pickle.load(f)
 
     pred=fish_model.predict([[length, weight]])[0]
