@@ -70,6 +70,7 @@ def fish(length:float, weight:float, nneighbor:int):
     Args:
      - length(int): 물고기 길이(cm)
      - weight(int): 물고기 무게(g)
+     - nneighbor : KNN에 사용할 neighbor의 수 [ 1 | 5 | 15 | 25 | 49 ]
 
     Return
      - dict, 물고기의 종류를 담은 딕셔너리
@@ -77,6 +78,9 @@ def fish(length:float, weight:float, nneighbor:int):
 
     import os
     from fishmlserv.model.manager import get_model_path
+
+    if nneighbor not in [1,5,15,25,49]:
+        return "wrong parameter"
 
     with open(f"{os.path.dirname(get_model_path())}/std-model-{nneighbor}.pickle", "rb") as f:
         fish_model=pickle.load(f)
