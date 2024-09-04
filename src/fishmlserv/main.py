@@ -84,8 +84,10 @@ def fish(length:float, weight:float, nneighbor:int):
 
     with open(f"{os.path.dirname(get_model_path())}/std-model-{nneighbor}.pkl", "rb") as f:
         fish_model=pickle.load(f)
-
-    pred=fish_model.predict([[length, weight]])[0]
+    
+    scaled_data = ([length,weight] - np.mean(fish_data,axis=0))/np.std(fish_data,axis=0)
+    
+    pred=fish_model.predict([scaled_data])[0]
 
     CLASSES={
                 0:"빙어",
