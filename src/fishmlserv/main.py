@@ -78,7 +78,7 @@ def fish(length:float, weight:float, nneighbor:int):
     import os
     from fishmlserv.model.manager import get_model_path
 
-    with open(f"{os.path.abspath(get_model_path())}/std-model-{nneighbor}.pickle", "rb") as f:
+    with open(f"{os.path.dirname(get_model_path())}/std-model-{nneighbor}.pickle", "rb") as f:
         fish_model=pickle.load(f)
 
     pred=fish_model.predict([[length, weight]])[0]
