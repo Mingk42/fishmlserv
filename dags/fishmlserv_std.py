@@ -37,12 +37,13 @@ with DAG(
 
         return df
 
-    def predict(*op_args,**context):
+    def predict(neighbor,**context):
         import requests as reqs
 
         df=context['task_instance'].xcom_pull(task_ids=f'load.csv')
         
-        nneighbor=op_args[0]
+        #nneighbor=op_args[0]
+        nneighbor=neighbor
         
         tmp=[]
         
@@ -92,30 +93,45 @@ with DAG(
     predict1 = PythonOperator(
                 task_id = "predict1",
                 python_callable=predict,
-                op_args=[1]
+                #op_args=[1]
+                op_kwargs={
+                    "neighbor":1
+                }
             )
 
     predict5 = PythonOperator(
                 task_id = "predict5",
                 python_callable=predict,
-                op_args=[5]
+                #op_args=[5]
+                op_kwargs={
+                    "neighbor":5
+                }
             )
 
     predict15 = PythonOperator(
                 task_id = "predict15",
                 python_callable=predict,
-                op_args=[15]
+                #op_args=[15]
+                op_kwargs={
+                    "neighbor":15
+                }
             )
 
     predict25 = PythonOperator(
                 task_id = "predict25",
                 python_callable=predict,
-                op_args=[25]
+                #op_args=[25]
+                op_kwargs={
+                    "neighbor":25
+                }
             )
     predict49 = PythonOperator(
                 task_id = "predict49",
                 python_callable=predict,
-                op_args=[49]
+                #op_args=[49]
+                op_kwargs={
+                    "neighbor":49
+                }
             )
     agg = PythonOperator(
                 task_id = "agg",
